@@ -19,6 +19,5 @@
         <button (click)="hideAddTimer()" class="cancel-button">Cancel</button>
         <button (click)="submitAddTimer()">Ok</button>
     </app-alert-view>
-    <app-simple-alert-view [title]="'Timer ended'" [message]="'Your countdown has finished'"></app-simple-alert-view>
-    <app-simple-alert-view></app-simple-alert-view>
+    <ng-container #alert></ng-container>
 </div>

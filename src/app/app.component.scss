@@ -5,7 +5,6 @@
         justify-content: center;
 
         h1 {
-            padding: 10px 0;
             font-family: sans-serif;
             width: 100%;
             text-align: center;
@@ -46,15 +45,5 @@
         font-weight: 600;
         color: #9932cc;
         font-size: 12px;
-    }
-
-    button{
-        width: 80px;
-        height: 40px;
-        margin-top: 20px;
-        background-color: #333;
-        color: white;
-        border: none;
-        flex:1;
     }
 }
