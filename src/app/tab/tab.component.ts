@@ -13,11 +13,9 @@ export class TabComponent implements OnInit, Tab {
   @Input() title!: string;
   public isActive: boolean = false;
 
-  constructor(public tabs: TabsComponent) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.tabs.addTab(this);
-  }
+  ngOnInit() {}
 
   clickTabContent() {
     this.onClick.emit();
