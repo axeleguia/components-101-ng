@@ -1,6 +1,6 @@
 <div>
     <h1>Timers</h1>
-    <app-timer *ngFor="let timer of timers" [init]="timer" (onComplete)="logCountdownEnd()"></app-timer>
+    <app-timer *ngFor="let timer of timers" [init]="timer" (onComplete)="showEndTimerAlert()"></app-timer>
     <button class="add" (click)="showAddTimer()">+</button>
     <app-alert-view [hidden]="!isAddTimerVisible">
         <div header>Add new timer</div>
@@ -8,5 +8,10 @@
         <input type="number" [(ngModel)]="time">
         <button (click)="hideAddTimer()" class="cancel-button">Cancel</button>
         <button (click)="submitAddTimer()">Ok</button>
+    </app-alert-view>
+    <app-alert-view [hidden]="!isEndTimerAlertVisible">
+        <div header>Timer ended</div>
+        <label>Your countdown has finished</label>
+        <button (click)="hideEndTimerAlert()">Ok</button>
     </app-alert-view>
 </div>
