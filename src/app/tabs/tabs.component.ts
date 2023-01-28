@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tab } from '../tab/tab.interface';
 
 @Component({
   selector: 'app-tabs',
@@ -6,5 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent {
+
+  public tabs: Tab[] = [];
+
+  constructor() { }
+
+  ngOnInit() {
+    this.addTab({ isActive: false, title: "tab 1" });
+    this.addTab({ isActive: false, title: "tab 2" });
+    this.addTab({ isActive: false, title: "tab 3" });
+    this.addTab({ isActive: false, title: "tab 4" });
+  }
+
+  addTab(tab: Tab) {
+    if (this.tabs.length === 0) {
+      tab.isActive = true;
+    }
+    this.tabs.push(tab);
+  }
+
+  selectTab(tab: Tab) {
+    for (let tab of this.tabs) {
+      tab.isActive = false;
+    }
+    tab.isActive = true;
+  }
 
 }
