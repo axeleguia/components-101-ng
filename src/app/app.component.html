@@ -15,13 +15,10 @@
     <app-alert-view [hidden]="!isAddTimerVisible">
         <div header>Add new timer</div>
         <label>Set the number of seconds for your timer </label>
-        <input type="number" [(ngModel)]="time">
+        <input type="number" [(ngModel)]="time" #timerInput>
         <button (click)="hideAddTimer()" class="cancel-button">Cancel</button>
         <button (click)="submitAddTimer()">Ok</button>
     </app-alert-view>
-    <app-alert-view [hidden]="!isEndTimerAlertVisible">
-        <div header>Timer ended</div>
-        <label>Your countdown has finished</label>
-        <button (click)="hideEndTimerAlert()">Ok</button>
-    </app-alert-view>
+    <app-simple-alert-view [title]="'Timer ended'" [message]="'Your countdown has finished'"></app-simple-alert-view>
+    <app-simple-alert-view></app-simple-alert-view>
 </div>
